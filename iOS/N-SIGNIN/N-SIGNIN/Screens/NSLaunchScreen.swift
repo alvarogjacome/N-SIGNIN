@@ -109,7 +109,7 @@ final class NSLaunchScreen: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.loadingImageView.alpha = 0
         }) { _ in
-            let navController = UINavigationController(rootViewController: NSPageController())
+            let navController = UINavigationController(rootViewController: NSPersonalData())
             navController.setNavigationBarHidden(true, animated: false)
             navController.modalPresentationStyle = .overFullScreen
             navController.modalTransitionStyle = .crossDissolve

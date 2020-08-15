@@ -1,5 +1,5 @@
 //
-//  NSPersonalData.swift
+//  UIViewController+Extension.swift
 //  N-SIGNIN
 //
 //  Created by Álvaro Gutiérrez Jácome on 15/08/2020.
@@ -8,20 +8,8 @@
 
 import UIKit
 
-final
-class NSPersonalData: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setupView()
-        setupNavBar()
-    }
-
-    private func setupView() {
-        view.backgroundColor = UIColor(named: "ColdMorning")
-    }
-
-    private func setupNavBar() {
+extension UIViewController {
+    func setupNavBarWithLogo() {
         navigationController?.setNavigationBarHidden(false, animated: true)
         let logo = UIImage(named: "Logo Horizontal Negativo Trans")
         let imageView = UIImageView(image: logo)
