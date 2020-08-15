@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NSLaunchScreen.swift
 //  N-SIGNIN
 //
 //  Created by Álvaro Gutiérrez Jácome on 15/08/2020.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class NSLaunchScreen: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        view.backgroundColor = .red
     }
-
-
 }
-

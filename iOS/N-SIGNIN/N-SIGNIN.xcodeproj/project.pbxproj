@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		CC123B9624E80ED2007382AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123B9524E80ED2007382AA /* AppDelegate.swift */; };
 		CC123B9824E80ED2007382AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123B9724E80ED2007382AA /* SceneDelegate.swift */; };
-		CC123B9A24E80ED2007382AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123B9924E80ED2007382AA /* ViewController.swift */; };
-		CC123B9D24E80ED2007382AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC123B9B24E80ED2007382AA /* Main.storyboard */; };
+		CC123B9A24E80ED2007382AA /* NSLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123B9924E80ED2007382AA /* NSLaunchScreen.swift */; };
 		CC123B9F24E80ED4007382AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC123B9E24E80ED4007382AA /* Assets.xcassets */; };
 		CC123BA224E80ED4007382AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC123BA024E80ED4007382AA /* LaunchScreen.storyboard */; };
 		CC123BAD24E80ED4007382AA /* N_SIGNINTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BAC24E80ED4007382AA /* N_SIGNINTests.swift */; };
@@ -38,8 +37,7 @@
 		CC123B9224E80ED2007382AA /* N-SIGNIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "N-SIGNIN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC123B9524E80ED2007382AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC123B9724E80ED2007382AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC123B9924E80ED2007382AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CC123B9C24E80ED2007382AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CC123B9924E80ED2007382AA /* NSLaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLaunchScreen.swift; sourceTree = "<group>"; };
 		CC123B9E24E80ED4007382AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC123BA124E80ED4007382AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC123BA324E80ED4007382AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,13 +97,10 @@
 		CC123B9424E80ED2007382AA /* N-SIGNIN */ = {
 			isa = PBXGroup;
 			children = (
-				CC123B9524E80ED2007382AA /* AppDelegate.swift */,
-				CC123B9724E80ED2007382AA /* SceneDelegate.swift */,
-				CC123B9924E80ED2007382AA /* ViewController.swift */,
-				CC123B9B24E80ED2007382AA /* Main.storyboard */,
-				CC123B9E24E80ED4007382AA /* Assets.xcassets */,
-				CC123BA024E80ED4007382AA /* LaunchScreen.storyboard */,
-				CC123BA324E80ED4007382AA /* Info.plist */,
+				CC123BC724E810D2007382AA /* Screens */,
+				CC123BC624E80FAF007382AA /* Resources */,
+				CC123BC524E80F80007382AA /* APP */,
+				CC123B9924E80ED2007382AA /* NSLaunchScreen.swift */,
 			);
 			path = "N-SIGNIN";
 			sourceTree = "<group>";
@@ -126,6 +121,32 @@
 				CC123BB924E80ED4007382AA /* Info.plist */,
 			);
 			path = "N-SIGNINUITests";
+			sourceTree = "<group>";
+		};
+		CC123BC524E80F80007382AA /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				CC123B9524E80ED2007382AA /* AppDelegate.swift */,
+				CC123B9724E80ED2007382AA /* SceneDelegate.swift */,
+				CC123BA324E80ED4007382AA /* Info.plist */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
+		CC123BC624E80FAF007382AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC123B9E24E80ED4007382AA /* Assets.xcassets */,
+				CC123BA024E80ED4007382AA /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC123BC724E810D2007382AA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +255,6 @@
 			files = (
 				CC123BA224E80ED4007382AA /* LaunchScreen.storyboard in Resources */,
 				CC123B9F24E80ED4007382AA /* Assets.xcassets in Resources */,
-				CC123B9D24E80ED2007382AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC123B9A24E80ED2007382AA /* ViewController.swift in Sources */,
+				CC123B9A24E80ED2007382AA /* NSLaunchScreen.swift in Sources */,
 				CC123B9624E80ED2007382AA /* AppDelegate.swift in Sources */,
 				CC123B9824E80ED2007382AA /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CC123B9B24E80ED2007382AA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC123B9C24E80ED2007382AA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CC123BA024E80ED4007382AA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -436,7 +448,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M9R5VTJGJ5;
-				INFOPLIST_FILE = "N-SIGNIN/Info.plist";
+				INFOPLIST_FILE = "N-SIGNIN/APP/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +457,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "alvarogjacome.N-SIGNIN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,7 +467,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M9R5VTJGJ5;
-				INFOPLIST_FILE = "N-SIGNIN/Info.plist";
+				INFOPLIST_FILE = "N-SIGNIN/APP/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,7 +476,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "alvarogjacome.N-SIGNIN";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
