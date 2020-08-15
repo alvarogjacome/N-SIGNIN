@@ -14,6 +14,7 @@
 		CC123BA224E80ED4007382AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC123BA024E80ED4007382AA /* LaunchScreen.storyboard */; };
 		CC123BAD24E80ED4007382AA /* N_SIGNINTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BAC24E80ED4007382AA /* N_SIGNINTests.swift */; };
 		CC123BB824E80ED4007382AA /* N_SIGNINUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BB724E80ED4007382AA /* N_SIGNINUITests.swift */; };
+		CC123BC924E82BA5007382AA /* NSPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BC824E82BA5007382AA /* NSPageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CC123BB324E80ED4007382AA /* N-SIGNINUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "N-SIGNINUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC123BB724E80ED4007382AA /* N_SIGNINUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N_SIGNINUITests.swift; sourceTree = "<group>"; };
 		CC123BB924E80ED4007382AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC123BC824E82BA5007382AA /* NSPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +99,9 @@
 		CC123B9424E80ED2007382AA /* N-SIGNIN */ = {
 			isa = PBXGroup;
 			children = (
-				CC123BC724E810D2007382AA /* Screens */,
-				CC123BC624E80FAF007382AA /* Resources */,
 				CC123BC524E80F80007382AA /* APP */,
-				CC123B9924E80ED2007382AA /* NSLaunchScreen.swift */,
+				CC123BC624E80FAF007382AA /* Resources */,
+				CC123BC724E810D2007382AA /* Screens */,
 			);
 			path = "N-SIGNIN";
 			sourceTree = "<group>";
@@ -127,8 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				CC123B9524E80ED2007382AA /* AppDelegate.swift */,
-				CC123B9724E80ED2007382AA /* SceneDelegate.swift */,
 				CC123BA324E80ED4007382AA /* Info.plist */,
+				CC123B9724E80ED2007382AA /* SceneDelegate.swift */,
 			);
 			path = APP;
 			sourceTree = "<group>";
@@ -145,6 +146,8 @@
 		CC123BC724E810D2007382AA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CC123B9924E80ED2007382AA /* NSLaunchScreen.swift */,
+				CC123BC824E82BA5007382AA /* NSPageController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				CC123B9A24E80ED2007382AA /* NSLaunchScreen.swift in Sources */,
 				CC123B9624E80ED2007382AA /* AppDelegate.swift in Sources */,
 				CC123B9824E80ED2007382AA /* SceneDelegate.swift in Sources */,
+				CC123BC924E82BA5007382AA /* NSPageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
