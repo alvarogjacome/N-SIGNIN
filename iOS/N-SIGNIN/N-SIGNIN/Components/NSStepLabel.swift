@@ -18,6 +18,10 @@ final class NSStepLabel: UILabel {
         configuration()
     }
 
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     private func configuration() {
         textAlignment = .center
         layer.cornerRadius = 15
@@ -28,10 +32,6 @@ final class NSStepLabel: UILabel {
 
     override var intrinsicContentSize: CGSize {
         return CGSize(width: 30, height: 30)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     func setCompleted() {

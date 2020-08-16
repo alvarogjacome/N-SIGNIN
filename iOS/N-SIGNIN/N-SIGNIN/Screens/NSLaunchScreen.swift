@@ -79,7 +79,7 @@ final class NSLaunchScreen: UIViewController {
 
         NSLayoutConstraint.activate([
             logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 155),
-            logoImageView.bottomAnchor.constraint(equalTo: loadingImageView.topAnchor, constant: -89.2),
+            logoImageView.heightAnchor.constraint(equalToConstant: 125),
             logoImageView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 65),
             logoImageView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -65)
         ])
@@ -89,8 +89,8 @@ final class NSLaunchScreen: UIViewController {
         loadingImageView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
+            loadingImageView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 89),
             loadingImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loadingImageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -223),
             loadingImageView.heightAnchor.constraint(equalToConstant: 74.8),
             loadingImageView.widthAnchor.constraint(equalToConstant: 71.52)
         ])
@@ -109,7 +109,10 @@ final class NSLaunchScreen: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             self.loadingImageView.alpha = 0
         }) { _ in
-            let navController = UINavigationController(rootViewController: NSPersonalData())
+
+            let viewControllersInProcess = [NSPersonalData(), NSGenderBirth(), NSLogInformation()]
+            let signUpProcess = NSSignUpProcess(viewModel: NSSignUpProcessViewModel(), processViewControllers: viewControllersInProcess, indicator: NSPageIndicator(with: viewControllersInProcess.count))
+            let navController = UINavigationController(rootViewController: signUpProcess)
             navController.setNavigationBarHidden(true, animated: false)
             navController.modalPresentationStyle = .overFullScreen
             navController.modalTransitionStyle = .crossDissolve

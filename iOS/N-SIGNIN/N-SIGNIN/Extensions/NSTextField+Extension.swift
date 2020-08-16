@@ -81,3 +81,26 @@ extension NSTextField {
         resignFirstResponder()
     }
 }
+
+extension NSTextField {
+    func nameMode() -> NSTextField {
+        textContentType = .name
+        return self
+    }
+
+    func surnameMode() -> NSTextField {
+        textContentType = .familyName
+        return self
+    }
+
+    func userNameMode() -> NSTextField {
+        textContentType = .username
+        return self
+    }
+
+    func passwordMode() -> NSTextField {
+        textContentType = .newPassword
+        isSecureTextEntry = true
+        return self
+    }
+}

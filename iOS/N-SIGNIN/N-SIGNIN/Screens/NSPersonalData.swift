@@ -15,8 +15,8 @@ final class NSPersonalData: UIViewController {
     private let surnameField: NSFormField
 
     init() {
-        nameTextField = NSTextField(iconImage: UIImage(named: "Group 7"))
-        surnameTextField = NSTextField(iconImage: UIImage(named: "Group 7"))
+        nameTextField = NSTextField(iconImage: UIImage(named: "Group 7")).nameMode()
+        surnameTextField = NSTextField(iconImage: UIImage(named: "Group 7")).surnameMode()
         nameField = NSFormField(textfield: nameTextField, titleLabel: "Name")
         surnameField = NSFormField(textfield: surnameTextField, titleLabel: "Surname")
 
@@ -34,6 +34,12 @@ final class NSPersonalData: UIViewController {
         setupView()
         addSubViews()
         layoutSubViews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let parent = parent as? NSSignUpProcess else { return }
+        parent.signUpProcessDelegate = self
     }
 
     private func setupView() {
@@ -69,5 +75,11 @@ final class NSPersonalData: UIViewController {
             surnameField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 41),
             surnameField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -41),
         ])
+    }
+}
+
+extension NSPersonalData: NSSignUpProcessDelegate {
+    func updateData(model: NSSignUpProcessViewModel) {
+        model.updatePersonalInfo(name: nameTextField.text!, surname: surnameTextField.text!)
     }
 }

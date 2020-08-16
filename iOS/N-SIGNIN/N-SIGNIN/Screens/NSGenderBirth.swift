@@ -37,6 +37,12 @@ final class NSGenderBirth: UIViewController {
         layoutSubViews()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let parent = parent as? NSSignUpProcess else { return }
+        parent.signUpProcessDelegate = self
+    }
+
     private func setupView() {
         view.backgroundColor = UIColor(named: "ColdMorning")
         genderSelector.tag = 0
@@ -45,7 +51,6 @@ final class NSGenderBirth: UIViewController {
         birthdatePicker.delegate = parent as? UITextFieldDelegate
 
         genderSelector.pickerDelegate = self
-
     }
 
     private func addSubViews() {
@@ -87,5 +92,11 @@ extension NSGenderBirth: NSTextFieldPickerDelegate {
 
     func didSelectRow(row: Int) -> String? {
         pickerData[row]
+    }
+}
+
+extension NSGenderBirth: NSSignUpProcessDelegate {
+    func updateData(model: NSSignUpProcessViewModel) {
+        model.updateGenderAndBirth(gender: genderSelector.text!, birth: birthdatePicker.text!)
     }
 }

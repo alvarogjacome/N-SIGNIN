@@ -15,8 +15,8 @@ final class NSLogInformation: UIViewController {
     private let passwordField: NSFormField
 
     init() {
-        usernameTextField = NSTextField(iconImage: UIImage(named: "Group 3"), alternateIconImage: UIImage(named: "Group 5"))
-        passwordTextField = NSTextField(iconImage: UIImage(named: "Group 4"))
+        usernameTextField = NSTextField(iconImage: UIImage(named: "Group 3"), alternateIconImage: UIImage(named: "Group 5")).userNameMode()
+        passwordTextField = NSTextField(iconImage: UIImage(named: "Group 4")).passwordMode()
         usernameField = NSFormField(textfield: usernameTextField, titleLabel: "Username")
         passwordField = NSFormField(textfield: passwordTextField, titleLabel: "Password")
 
@@ -33,6 +33,12 @@ final class NSLogInformation: UIViewController {
         setupView()
         addSubViews()
         layoutSubViews()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let parent = parent as? NSSignUpProcess else { return }
+        parent.signUpProcessDelegate = self
     }
 
     private func setupView() {
@@ -68,5 +74,11 @@ final class NSLogInformation: UIViewController {
             passwordField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 41),
             passwordField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -41),
         ])
+    }
+}
+
+extension NSLogInformation: NSSignUpProcessDelegate {
+    func updateData(model: NSSignUpProcessViewModel) {
+        model.updateLoginInformation(username: usernameTextField.text!, password: passwordTextField.text!)
     }
 }

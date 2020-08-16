@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol NSSignUpProcessDelegate {
+    func updateData(model: NSSignUpProcessViewModel)
+}
+
 final class NSSignUpProcess: UIPageViewController {
+    private let model: NSSignUpProcessViewModel
+    private let processViewControllers: [UIViewController]
+    private let indicatorPage: NSPageIndicator
+
     private let nextPageButton = NSPagerButton(direction: .Next)
     private let previousPageButton = NSPagerButton(direction: .Previous)
-    private let processViewControllers = [NSPersonalData(), NSGenderBirth(), NSLogInformation(), NSLogInformation()]
-    private let indicatorPage = NSPageIndicator(with: 4)
     private let titleLabel = UILabel()
 
     private var currentIndex = 0 {
@@ -28,6 +34,19 @@ final class NSSignUpProcess: UIPageViewController {
                 previousPageButton.isHidden = false
             }
         }
+    }
+
+    var signUpProcessDelegate: NSSignUpProcessDelegate?
+
+    init(viewModel: NSSignUpProcessViewModel, processViewControllers: [UIViewController], indicator: NSPageIndicator) {
+        self.model = viewModel
+        self.indicatorPage = indicator
+        self.processViewControllers = processViewControllers
+        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     override func viewDidLoad() {
@@ -150,6 +169,7 @@ extension NSSignUpProcess: NSPagerButtonDelegate {
 
     func nextButtonAction() {
         if currentIndex < (processViewControllers.count - 1) {
+            signUpProcessDelegate?.updateData(model: model)
             currentIndex += 1
             indicatorPage.nextPoint()
             updatePage(direction: .forward)
