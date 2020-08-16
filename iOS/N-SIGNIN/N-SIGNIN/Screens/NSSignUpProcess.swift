@@ -9,8 +9,8 @@
 import UIKit
 
 final class NSSignUpProcess: UIPageViewController {
-    private let nextPageButton = UIButton(type: .system)
-    private let previousPageButton = UIButton(type: .system)
+    private let nextPageButton = NSPagerButton(direction: .Next)
+    private let previousPageButton = NSPagerButton(direction: .Previous)
     private let processViewControllers = [NSPersonalData(), NSGenderBirth(), NSLogInformation(), NSLogInformation()]
     private let indicatorPage = NSPageIndicator(with: 4)
     private var currentIndex = 0 {
@@ -84,44 +84,28 @@ final class NSSignUpProcess: UIPageViewController {
     }
 
     private func setupNextButton() {
-        nextPageButton.setTitle("Siguiente", for: .normal)
-        nextPageButton.setImage(UIImage(named: "Vector-2"), for: .normal)
-        nextPageButton.semanticContentAttribute = .forceRightToLeft
-        nextPageButton.contentMode = .center
-        nextPageButton.imageView?.contentMode = .scaleAspectFit
-        nextPageButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 13, bottom: 0, right: 0)
-
-        nextPageButton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
+        nextPageButton.delegate = self
     }
 
     private func setupPreviousButton() {
-        previousPageButton.isHidden = true
-        previousPageButton.setTitle("Anterior", for: .normal)
-        previousPageButton.setImage(UIImage(named: "Vector-4"), for: .normal)
-        previousPageButton.contentMode = .center
-        previousPageButton.imageView?.contentMode = .scaleAspectFit
-        previousPageButton.imageEdgeInsets = UIEdgeInsets(top: 2, left: 0, bottom: 0, right: 13)
-
-        previousPageButton.addTarget(self, action: #selector(previousPage), for: .touchUpInside)
+        previousPageButton.delegate = self
     }
+}
 
-    @objc func nextPage() {
-        if currentIndex < (processViewControllers.count - 1) {
-            currentIndex += 1
-            indicatorPage.nextPoint()
-            setViewControllers([processViewControllers[currentIndex]], direction: .forward, animated: true, completion: nil)
-        }
-    }
-
-    @objc func previousPage() {
+extension NSSignUpProcess: NSPagerButtonDelegate {
+    func previousButtonAction() {
         if currentIndex > 0 {
             currentIndex -= 1
             indicatorPage.previusPoint()
             setViewControllers([processViewControllers[currentIndex]], direction: .reverse, animated: true, completion: nil)
         }
     }
+
+    func nextButtonAction() {
+        if currentIndex < (processViewControllers.count - 1) {
+            currentIndex += 1
+            indicatorPage.nextPoint()
+            setViewControllers([processViewControllers[currentIndex]], direction: .forward, animated: true, completion: nil)
+        }
+    }
 }
-
-
-
-

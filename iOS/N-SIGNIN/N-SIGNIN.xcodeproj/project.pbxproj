@@ -23,6 +23,7 @@
 		CC123BD924E88FBD007382AA /* NSLogInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD824E88FBD007382AA /* NSLogInformation.swift */; };
 		CC6F612524E9537700F1D6C8 /* NSStepLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612424E9537700F1D6C8 /* NSStepLabel.swift */; };
 		CC6F612724E953A400F1D6C8 /* NSPageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612624E953A400F1D6C8 /* NSPageIndicator.swift */; };
+		CC6F612924E9597400F1D6C8 /* NSPagerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612824E9597400F1D6C8 /* NSPagerButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		CC123BD824E88FBD007382AA /* NSLogInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLogInformation.swift; sourceTree = "<group>"; };
 		CC6F612424E9537700F1D6C8 /* NSStepLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStepLabel.swift; sourceTree = "<group>"; };
 		CC6F612624E953A400F1D6C8 /* NSPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPageIndicator.swift; sourceTree = "<group>"; };
+		CC6F612824E9597400F1D6C8 /* NSPagerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPagerButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				CC123BD224E875C9007382AA /* NSFormField.swift */,
 				CC6F612424E9537700F1D6C8 /* NSStepLabel.swift */,
 				CC6F612624E953A400F1D6C8 /* NSPageIndicator.swift */,
+				CC6F612824E9597400F1D6C8 /* NSPagerButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				CC123B9824E80ED2007382AA /* SceneDelegate.swift in Sources */,
 				CC123BD524E87A08007382AA /* NSGenderBirth.swift in Sources */,
 				CC123BCC24E83954007382AA /* NSTextField.swift in Sources */,
+				CC6F612924E9597400F1D6C8 /* NSPagerButton.swift in Sources */,
 				CC123BD924E88FBD007382AA /* NSLogInformation.swift in Sources */,
 				CC6F612724E953A400F1D6C8 /* NSPageIndicator.swift in Sources */,
 				CC123BC924E82BA5007382AA /* NSPersonalData.swift in Sources */,
