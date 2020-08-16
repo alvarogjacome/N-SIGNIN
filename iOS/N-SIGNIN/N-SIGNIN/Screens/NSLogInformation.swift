@@ -15,12 +15,13 @@ final class NSLogInformation: UIViewController {
     private let passwordField: NSFormField
 
     init() {
-        usernameTextField = NSTextField(iconImage: UIImage(named: "Group 3"))
+        usernameTextField = NSTextField(iconImage: UIImage(named: "Group 3"), alternateIconImage: UIImage(named: "Group 5"))
         passwordTextField = NSTextField(iconImage: UIImage(named: "Group 4"))
         usernameField = NSFormField(textfield: usernameTextField, titleLabel: "Username")
         passwordField = NSFormField(textfield: passwordTextField, titleLabel: "Password")
 
         super.init(nibName: nil, bundle: nil)
+        title = "Log in information"
     }
 
     required init?(coder: NSCoder) {
@@ -36,6 +37,10 @@ final class NSLogInformation: UIViewController {
 
     private func setupView() {
         view.backgroundColor = UIColor(named: "ColdMorning")
+        usernameTextField.tag = 0
+        passwordTextField.tag = 1
+        usernameTextField.delegate = parent as? UITextFieldDelegate
+        passwordTextField.delegate = parent as? UITextFieldDelegate
     }
 
     private func addSubViews() {

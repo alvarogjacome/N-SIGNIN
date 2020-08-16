@@ -24,6 +24,7 @@
 		CC6F612524E9537700F1D6C8 /* NSStepLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612424E9537700F1D6C8 /* NSStepLabel.swift */; };
 		CC6F612724E953A400F1D6C8 /* NSPageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612624E953A400F1D6C8 /* NSPageIndicator.swift */; };
 		CC6F612924E9597400F1D6C8 /* NSPagerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612824E9597400F1D6C8 /* NSPagerButton.swift */; };
+		CC6F612B24E97DF500F1D6C8 /* NSTextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612A24E97DF500F1D6C8 /* NSTextField+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		CC6F612424E9537700F1D6C8 /* NSStepLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStepLabel.swift; sourceTree = "<group>"; };
 		CC6F612624E953A400F1D6C8 /* NSPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPageIndicator.swift; sourceTree = "<group>"; };
 		CC6F612824E9597400F1D6C8 /* NSPagerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPagerButton.swift; sourceTree = "<group>"; };
+		CC6F612A24E97DF500F1D6C8 /* NSTextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextField+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				CC123BD024E84AF8007382AA /* UIViewController+Extension.swift */,
+				CC6F612A24E97DF500F1D6C8 /* NSTextField+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			files = (
 				CC123BD124E84AF8007382AA /* UIViewController+Extension.swift in Sources */,
 				CC123B9A24E80ED2007382AA /* NSLaunchScreen.swift in Sources */,
+				CC6F612B24E97DF500F1D6C8 /* NSTextField+Extension.swift in Sources */,
 				CC123B9624E80ED2007382AA /* AppDelegate.swift in Sources */,
 				CC6F612524E9537700F1D6C8 /* NSStepLabel.swift in Sources */,
 				CC123BD724E88277007382AA /* NSSignUpProcess.swift in Sources */,

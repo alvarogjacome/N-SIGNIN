@@ -21,6 +21,8 @@ final class NSPersonalData: UIViewController {
         surnameField = NSFormField(textfield: surnameTextField, titleLabel: "Surname")
 
         super.init(nibName: nil, bundle: nil)
+
+        title = "Personal data"
     }
 
     required init?(coder: NSCoder) {
@@ -36,6 +38,10 @@ final class NSPersonalData: UIViewController {
 
     private func setupView() {
         view.backgroundColor = UIColor(named: "ColdMorning")
+        nameTextField.tag = 0
+        surnameTextField.tag = 1
+        nameTextField.delegate = parent as? UITextFieldDelegate
+        surnameTextField.delegate = parent as? UITextFieldDelegate
     }
 
     private func addSubViews() {

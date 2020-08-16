@@ -13,6 +13,8 @@ final class NSSignUpProcess: UIPageViewController {
     private let previousPageButton = NSPagerButton(direction: .Previous)
     private let processViewControllers = [NSPersonalData(), NSGenderBirth(), NSLogInformation(), NSLogInformation()]
     private let indicatorPage = NSPageIndicator(with: 4)
+    private let titleLabel = UILabel()
+
     private var currentIndex = 0 {
         didSet {
             if currentIndex <= 0 {
@@ -35,9 +37,15 @@ final class NSSignUpProcess: UIPageViewController {
         layoutViews()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
     private func configuration() {
         setupNavBarWithLogo()
-        setViewControllers([processViewControllers[currentIndex]], direction: .forward, animated: true, completion: nil)
+        setupTitleLabel()
+        createDismissTapGesture()
+        updatePage(direction: .forward)
         setupNextButton()
         setupPreviousButton()
     }
@@ -46,17 +54,17 @@ final class NSSignUpProcess: UIPageViewController {
         view.addSubview(nextPageButton)
         view.addSubview(previousPageButton)
         view.addSubview(indicatorPage)
+        view.addSubview(titleLabel)
     }
 
     private func layoutViews() {
         layoutNextPageButton()
         layoutPreviousPageButton()
         layoutIndicatorPage()
+        layoutTitleLabel()
     }
 
     private func layoutNextPageButton() {
-        nextPageButton.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([
             nextPageButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24),
             nextPageButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 256),
@@ -65,8 +73,6 @@ final class NSSignUpProcess: UIPageViewController {
     }
 
     private func layoutPreviousPageButton() {
-        previousPageButton.translatesAutoresizingMaskIntoConstraints = false
-
         NSLayoutConstraint.activate([
             previousPageButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -24),
             previousPageButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
@@ -83,12 +89,53 @@ final class NSSignUpProcess: UIPageViewController {
         ])
     }
 
+    private func layoutTitleLabel() {
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: indicatorPage.bottomAnchor, constant: 37),
+            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.heightAnchor.constraint(equalToConstant: 23),
+        ])
+    }
+
+    private func setupTitleLabel() {
+        titleLabel.font = UIFont.systemFont(ofSize: 20.0)
+        titleLabel.textColor = UIColor(named: "Kettleman")
+    }
+
     private func setupNextButton() {
         nextPageButton.delegate = self
     }
 
     private func setupPreviousButton() {
         previousPageButton.delegate = self
+    }
+
+    private func updatePage(direction: NavigationDirection) {
+        setViewControllers([processViewControllers[currentIndex]], direction: direction, animated: true, completion: nil)
+        titleLabel.text = processViewControllers[currentIndex].title
+    }
+
+    private func createDismissTapGesture() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+}
+
+extension NSSignUpProcess: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let nextTag = textField.tag + 1
+        let nextResponder = textField.superview?.superview?.viewWithTag(nextTag) as UIResponder?
+
+        if nextResponder != nil {
+            nextResponder?.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+            nextButtonAction()
+        }
+
+        return false
     }
 }
 
@@ -97,7 +144,7 @@ extension NSSignUpProcess: NSPagerButtonDelegate {
         if currentIndex > 0 {
             currentIndex -= 1
             indicatorPage.previusPoint()
-            setViewControllers([processViewControllers[currentIndex]], direction: .reverse, animated: true, completion: nil)
+            updatePage(direction: .reverse)
         }
     }
 
@@ -105,7 +152,7 @@ extension NSSignUpProcess: NSPagerButtonDelegate {
         if currentIndex < (processViewControllers.count - 1) {
             currentIndex += 1
             indicatorPage.nextPoint()
-            setViewControllers([processViewControllers[currentIndex]], direction: .forward, animated: true, completion: nil)
+            updatePage(direction: .forward)
         }
     }
 }

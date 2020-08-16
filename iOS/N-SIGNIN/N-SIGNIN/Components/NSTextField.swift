@@ -9,19 +9,24 @@
 import UIKit
 
 class NSTextField: UITextField {
+    private let mainIcon: UIImage?
+    private let alternateIcon: UIImage?
     private let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    var pickerDelegate: NSTextFieldPickerDelegate?
 
-    init(iconImage: UIImage?) {
+    init(iconImage: UIImage? = nil, alternateIconImage: UIImage? = nil) {
+        self.mainIcon = iconImage
+        self.alternateIcon = alternateIconImage
         super.init(frame: .zero)
 
-        configuration(iconImage: iconImage)
+        configuration()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func configuration(iconImage: UIImage?) {
+    private func configuration() {
         translatesAutoresizingMaskIntoConstraints = false
 
         layer.cornerRadius = 3
@@ -32,13 +37,36 @@ class NSTextField: UITextField {
         adjustsFontSizeToFitWidth = true
 
         returnKeyType = .next
-        clearButtonMode = .whileEditing
 
-        let rightImage = UIImageView(image: iconImage)
+        let rightImage = UIImageView(image: mainIcon)
         rightImage.contentMode = .scaleAspectFit
-
         rightView = rightImage
         rightViewMode = .unlessEditing
+
+        if alternateIcon != nil {
+            setAlternateIcon()
+        } else {
+            clearButtonMode = .whileEditing
+        }
+    }
+
+    private func setAlternateIcon() {
+        addTarget(self, action: #selector(textFieldDidChange), for: .allEvents)
+    }
+
+    @objc func textFieldDidChange() {
+        let mainIconImage = UIImageView(image: mainIcon)
+        mainIconImage.contentMode = .scaleAspectFit
+        let alternateIconImage = UIImageView(image: alternateIcon)
+        alternateIconImage.contentMode = .scaleAspectFit
+
+        rightViewMode = .always
+
+        if isEditing {
+            rightView = alternateIconImage
+        } else {
+            rightView = mainIconImage
+        }
     }
 
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
@@ -57,6 +85,8 @@ class NSTextField: UITextField {
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
     }
+
+    @objc func tapCancel() {
+        resignFirstResponder()
+    }
 }
-
-

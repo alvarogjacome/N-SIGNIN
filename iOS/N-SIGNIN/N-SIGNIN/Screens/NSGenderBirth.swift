@@ -13,14 +13,17 @@ final class NSGenderBirth: UIViewController {
     private let birthdatePicker: NSTextField
     private let nameField: NSFormField
     private let surnameField: NSFormField
+    private let pickerData = ["Male", "Female", "Undefined"]
 
     init() {
-        genderSelector = NSTextField(iconImage: UIImage(named: "Vector-3"))
-        birthdatePicker = NSTextField(iconImage: UIImage(named: "Group 1"))
+        genderSelector = NSTextField(iconImage: UIImage(named: "Vector"), alternateIconImage: UIImage(named: "Vector-1")).pickerMode()
+        birthdatePicker = NSTextField(iconImage: UIImage(named: "Group 1")).dateMode()
         nameField = NSFormField(textfield: genderSelector, titleLabel: "Gender")
         surnameField = NSFormField(textfield: birthdatePicker, titleLabel: "Birthdate")
 
         super.init(nibName: nil, bundle: nil)
+
+        title = "Personal data: gender & age"
     }
 
     required init?(coder: NSCoder) {
@@ -36,6 +39,13 @@ final class NSGenderBirth: UIViewController {
 
     private func setupView() {
         view.backgroundColor = UIColor(named: "ColdMorning")
+        genderSelector.tag = 0
+        birthdatePicker.tag = 1
+        genderSelector.delegate = parent as? UITextFieldDelegate
+        birthdatePicker.delegate = parent as? UITextFieldDelegate
+
+        genderSelector.pickerDelegate = self
+
     }
 
     private func addSubViews() {
@@ -63,5 +73,19 @@ final class NSGenderBirth: UIViewController {
             surnameField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 41),
             surnameField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -41),
         ])
+    }
+}
+
+extension NSGenderBirth: NSTextFieldPickerDelegate {
+    func numberOfRows() -> Int {
+        pickerData.count
+    }
+
+    func titleForRow(row: Int) -> String? {
+        pickerData[row]
+    }
+
+    func didSelectRow(row: Int) -> String? {
+        pickerData[row]
     }
 }
