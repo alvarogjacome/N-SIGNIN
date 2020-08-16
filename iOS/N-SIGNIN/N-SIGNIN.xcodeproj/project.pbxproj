@@ -18,6 +18,11 @@
 		CC123BCC24E83954007382AA /* NSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BCB24E83954007382AA /* NSTextField.swift */; };
 		CC123BD124E84AF8007382AA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD024E84AF8007382AA /* UIViewController+Extension.swift */; };
 		CC123BD324E875C9007382AA /* NSFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD224E875C9007382AA /* NSFormField.swift */; };
+		CC123BD524E87A08007382AA /* NSGenderBirth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD424E87A08007382AA /* NSGenderBirth.swift */; };
+		CC123BD724E88277007382AA /* NSSignUpProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD624E88277007382AA /* NSSignUpProcess.swift */; };
+		CC123BD924E88FBD007382AA /* NSLogInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD824E88FBD007382AA /* NSLogInformation.swift */; };
+		CC6F612524E9537700F1D6C8 /* NSStepLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612424E9537700F1D6C8 /* NSStepLabel.swift */; };
+		CC6F612724E953A400F1D6C8 /* NSPageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612624E953A400F1D6C8 /* NSPageIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		CC123BCB24E83954007382AA /* NSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
 		CC123BD024E84AF8007382AA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		CC123BD224E875C9007382AA /* NSFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFormField.swift; sourceTree = "<group>"; };
+		CC123BD424E87A08007382AA /* NSGenderBirth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSGenderBirth.swift; sourceTree = "<group>"; };
+		CC123BD624E88277007382AA /* NSSignUpProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSignUpProcess.swift; sourceTree = "<group>"; };
+		CC123BD824E88FBD007382AA /* NSLogInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLogInformation.swift; sourceTree = "<group>"; };
+		CC6F612424E9537700F1D6C8 /* NSStepLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStepLabel.swift; sourceTree = "<group>"; };
+		CC6F612624E953A400F1D6C8 /* NSPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPageIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,8 +164,11 @@
 		CC123BC724E810D2007382AA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				CC123BD424E87A08007382AA /* NSGenderBirth.swift */,
 				CC123B9924E80ED2007382AA /* NSLaunchScreen.swift */,
+				CC123BD824E88FBD007382AA /* NSLogInformation.swift */,
 				CC123BC824E82BA5007382AA /* NSPersonalData.swift */,
+				CC123BD624E88277007382AA /* NSSignUpProcess.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -165,6 +178,8 @@
 			children = (
 				CC123BCB24E83954007382AA /* NSTextField.swift */,
 				CC123BD224E875C9007382AA /* NSFormField.swift */,
+				CC6F612424E9537700F1D6C8 /* NSStepLabel.swift */,
+				CC6F612624E953A400F1D6C8 /* NSPageIndicator.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -310,9 +325,14 @@
 				CC123BD124E84AF8007382AA /* UIViewController+Extension.swift in Sources */,
 				CC123B9A24E80ED2007382AA /* NSLaunchScreen.swift in Sources */,
 				CC123B9624E80ED2007382AA /* AppDelegate.swift in Sources */,
+				CC6F612524E9537700F1D6C8 /* NSStepLabel.swift in Sources */,
+				CC123BD724E88277007382AA /* NSSignUpProcess.swift in Sources */,
 				CC123BD324E875C9007382AA /* NSFormField.swift in Sources */,
 				CC123B9824E80ED2007382AA /* SceneDelegate.swift in Sources */,
+				CC123BD524E87A08007382AA /* NSGenderBirth.swift in Sources */,
 				CC123BCC24E83954007382AA /* NSTextField.swift in Sources */,
+				CC123BD924E88FBD007382AA /* NSLogInformation.swift in Sources */,
+				CC6F612724E953A400F1D6C8 /* NSPageIndicator.swift in Sources */,
 				CC123BC924E82BA5007382AA /* NSPersonalData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
