@@ -52,7 +52,7 @@ final class NSSignUpProcessPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configuration()
-        addSubviews()
+        addViews()
         layoutViews()
     }
 
@@ -69,7 +69,7 @@ final class NSSignUpProcessPageViewController: UIPageViewController {
         setupPreviousButton()
     }
 
-    private func addSubviews() {
+    private func addViews() {
         view.addSubview(nextPageButton)
         view.addSubview(previousPageButton)
         view.addSubview(indicatorPage)
@@ -139,6 +139,10 @@ final class NSSignUpProcessPageViewController: UIPageViewController {
     private func createDismissTapGesture() {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
+    }
+
+    func getViewModel() -> NSSignUpProcessViewModel {
+        model
     }
 }
 

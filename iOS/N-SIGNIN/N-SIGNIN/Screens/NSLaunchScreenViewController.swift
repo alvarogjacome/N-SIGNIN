@@ -19,8 +19,8 @@ final class NSLaunchScreenViewController: UIViewController {
         setupBackgroundView()
         setupLogoImageView()
         setupLoadingImageView()
-        addSubViews()
-        layoutSubViews()
+        addViews()
+        layoutViews()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -51,13 +51,13 @@ final class NSLaunchScreenViewController: UIViewController {
         loadingImageView.contentMode = .scaleAspectFit
     }
 
-    private func addSubViews() {
+    private func addViews() {
         view.addSubview(backgroundView)
         view.addSubview(logoImageView)
         view.addSubview(loadingImageView)
     }
 
-    private func layoutSubViews() {
+    private func layoutViews() {
         layoutBackgroundView()
         layoutImageView()
         layoutLoadingImageView()
@@ -110,8 +110,9 @@ final class NSLaunchScreenViewController: UIViewController {
             self.loadingImageView.alpha = 0
         }) { _ in
 
-            let viewControllersInProcess = [NSPersonalDataViewController(), NSGenderBirthViewController(), NSLogInformationViewController()]
-            let signUpProcess = NSSignUpProcessPageViewController(viewModel: NSSignUpProcessViewModel(), processViewControllers: viewControllersInProcess, indicator: NSPageIndicator(with: viewControllersInProcess.count))
+            let viewModel = NSSignUpProcessViewModel()
+            let viewControllersInProcess = [NSPersonalDataViewController(), NSGenderBirthViewController(), NSLogInformationViewController(), NSCheckInformationViewController(viewModel: viewModel)]
+            let signUpProcess = NSSignUpProcessPageViewController(viewModel: viewModel, processViewControllers: viewControllersInProcess, indicator: NSPageIndicator(with: viewControllersInProcess.count))
             let navController = UINavigationController(rootViewController: signUpProcess)
             navController.setNavigationBarHidden(true, animated: false)
             navController.modalPresentationStyle = .overFullScreen

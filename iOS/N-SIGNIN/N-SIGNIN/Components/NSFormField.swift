@@ -20,7 +20,7 @@ final class NSFormField: UIView {
 
         translatesAutoresizingMaskIntoConstraints = false
 
-        addSubViews()
+        addViews()
         layoutViews()
     }
 
@@ -28,7 +28,7 @@ final class NSFormField: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func addSubViews() {
+    private func addViews() {
         addSubview(textfield)
         addSubview(label)
     }

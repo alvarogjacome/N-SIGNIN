@@ -32,8 +32,8 @@ final class NSPersonalDataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        addSubViews()
-        layoutSubViews()
+        addViews()
+        layoutViews()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -50,12 +50,12 @@ final class NSPersonalDataViewController: UIViewController {
         surnameTextField.delegate = parent as? UITextFieldDelegate
     }
 
-    private func addSubViews() {
+    private func addViews() {
         view.addSubview(nameField)
         view.addSubview(surnameField)
     }
 
-    private func layoutSubViews() {
+    private func layoutViews() {
         layoutNameTextField()
         layoutSurNameTextField()
     }

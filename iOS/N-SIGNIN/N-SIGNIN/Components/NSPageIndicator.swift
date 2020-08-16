@@ -26,7 +26,7 @@ final class NSPageIndicator: UIView {
         setupLine()
         setupStackView()
 
-        addSubViews()
+        addViews()
         layoutViews()
     }
 
@@ -50,7 +50,7 @@ final class NSPageIndicator: UIView {
         stackView.alignment = .center
     }
 
-    private func addSubViews() {
+    private func addViews() {
         addSubview(line)
         addSubview(stackView)
     }

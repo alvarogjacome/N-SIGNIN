@@ -31,8 +31,8 @@ final class NSLogInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        addSubViews()
-        layoutSubViews()
+        addViews()
+        layoutViews()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,12 +49,12 @@ final class NSLogInformationViewController: UIViewController {
         passwordTextField.delegate = parent as? UITextFieldDelegate
     }
 
-    private func addSubViews() {
+    private func addViews() {
         view.addSubview(usernameField)
         view.addSubview(passwordField)
     }
 
-    private func layoutSubViews() {
+    private func layoutViews() {
         layoutNameTextField()
         layoutSurNameTextField()
     }

@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum FieldType {
+    case Normal
+    case Secure
+}
+
 final class NSSignUpProcessViewModel {
     private var model: SignUpModel
 
@@ -16,20 +21,27 @@ final class NSSignUpProcessViewModel {
     }
 
     func updatePersonalInfo(name: String, surname: String) {
-        model.updateName(name)
-        model.updateSurname(surname)
+        model.updateName(name.emptyString())
+        model.updateSurname(surname.emptyString())
     }
 
     func updateGenderAndBirth(gender: String, birth: String) {
-        model.updateGender(gender)
-        model.updateBirth(birth)
+        model.updateGender(gender.emptyString())
+        model.updateBirth(birth.emptyString())
     }
 
     func updateLoginInformation(username: String, password: String) {
-        model.updateUserName(username)
-        model.updatePassword(password)
+        model.updateUserName(username.emptyString())
+        model.updatePassword(password.emptyString())
+    }
 
-        dump(model)
+    func getModelElements() -> [(String, String, FieldType)] {
+        [("Name", model.getName(), .Normal),
+         ("Surname", model.getSurname(), .Normal),
+         ("Gender", model.getGender(), .Normal),
+         ("Birth", model.getBirth(), .Normal),
+         ("Username", model.getUserName(), .Normal),
+         ("Password", model.getPassword(), .Secure)]
     }
 }
 
@@ -41,27 +53,53 @@ struct SignUpModel {
     private var gender: String?
     private var birth: String?
 
-    mutating func updateName(_ name: String) {
+    private let emptyField = "---"
+
+    mutating func updateName(_ name: String?) {
         self.name = name
     }
 
-    mutating func updateSurname(_ surname: String) {
+    mutating func updateSurname(_ surname: String?) {
         self.surname = surname
     }
 
-    mutating func updateUserName(_ userName: String) {
+    mutating func updateUserName(_ userName: String?) {
         self.userName = userName
     }
 
-    mutating func updatePassword(_ password: String) {
+    mutating func updatePassword(_ password: String?) {
         self.password = password
     }
 
-    mutating func updateGender(_ gender: String) {
+    mutating func updateGender(_ gender: String?) {
         self.gender = gender
     }
 
-    mutating func updateBirth(_ birth: String) {
+    mutating func updateBirth(_ birth: String?) {
         self.birth = birth
+    }
+
+    func getName() -> String {
+        name ?? emptyField
+    }
+
+    func getSurname() -> String {
+        surname ?? emptyField
+    }
+
+    func getUserName() -> String {
+        userName ?? emptyField
+    }
+
+    func getPassword() -> String {
+        password ?? emptyField
+    }
+
+    func getGender() -> String {
+        gender ?? emptyField
+    }
+
+    func getBirth() -> String {
+        birth ?? emptyField
     }
 }
