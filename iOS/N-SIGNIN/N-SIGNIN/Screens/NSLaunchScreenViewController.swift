@@ -1,5 +1,5 @@
 //
-//  NSLaunchScreen.swift
+//  NSLaunchScreenViewController.swift
 //  N-SIGNIN
 //
 //  Created by Álvaro Gutiérrez Jácome on 15/08/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class NSLaunchScreen: UIViewController {
+final class NSLaunchScreenViewController: UIViewController {
     private let backgroundView = UIView()
     private let logoImageView = UIImageView()
     private let loadingImageView = UIImageView()
@@ -110,8 +110,8 @@ final class NSLaunchScreen: UIViewController {
             self.loadingImageView.alpha = 0
         }) { _ in
 
-            let viewControllersInProcess = [NSPersonalData(), NSGenderBirth(), NSLogInformation()]
-            let signUpProcess = NSSignUpProcess(viewModel: NSSignUpProcessViewModel(), processViewControllers: viewControllersInProcess, indicator: NSPageIndicator(with: viewControllersInProcess.count))
+            let viewControllersInProcess = [NSPersonalDataViewController(), NSGenderBirthViewController(), NSLogInformationViewController()]
+            let signUpProcess = NSSignUpProcessPageViewController(viewModel: NSSignUpProcessViewModel(), processViewControllers: viewControllersInProcess, indicator: NSPageIndicator(with: viewControllersInProcess.count))
             let navController = UINavigationController(rootViewController: signUpProcess)
             navController.setNavigationBarHidden(true, animated: false)
             navController.modalPresentationStyle = .overFullScreen

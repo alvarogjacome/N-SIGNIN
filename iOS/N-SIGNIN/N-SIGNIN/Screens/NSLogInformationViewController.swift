@@ -37,7 +37,7 @@ final class NSLogInformationViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let parent = parent as? NSSignUpProcess else { return }
+        guard let parent = parent as? NSSignUpProcessPageViewController else { return }
         parent.signUpProcessDelegate = self
     }
 

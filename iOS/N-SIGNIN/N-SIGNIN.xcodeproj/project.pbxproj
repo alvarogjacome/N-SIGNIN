@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		CC123B9624E80ED2007382AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123B9524E80ED2007382AA /* AppDelegate.swift */; };
 		CC123B9824E80ED2007382AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123B9724E80ED2007382AA /* SceneDelegate.swift */; };
-		CC123B9A24E80ED2007382AA /* NSLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123B9924E80ED2007382AA /* NSLaunchScreen.swift */; };
+		CC123B9A24E80ED2007382AA /* NSLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123B9924E80ED2007382AA /* NSLaunchScreenViewController.swift */; };
 		CC123B9F24E80ED4007382AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC123B9E24E80ED4007382AA /* Assets.xcassets */; };
 		CC123BA224E80ED4007382AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC123BA024E80ED4007382AA /* LaunchScreen.storyboard */; };
 		CC123BAD24E80ED4007382AA /* N_SIGNINTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BAC24E80ED4007382AA /* N_SIGNINTests.swift */; };
 		CC123BB824E80ED4007382AA /* N_SIGNINUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BB724E80ED4007382AA /* N_SIGNINUITests.swift */; };
-		CC123BC924E82BA5007382AA /* NSPersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BC824E82BA5007382AA /* NSPersonalData.swift */; };
+		CC123BC924E82BA5007382AA /* NSPersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BC824E82BA5007382AA /* NSPersonalDataViewController.swift */; };
 		CC123BCC24E83954007382AA /* NSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BCB24E83954007382AA /* NSTextField.swift */; };
 		CC123BD124E84AF8007382AA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD024E84AF8007382AA /* UIViewController+Extension.swift */; };
 		CC123BD324E875C9007382AA /* NSFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD224E875C9007382AA /* NSFormField.swift */; };
-		CC123BD524E87A08007382AA /* NSGenderBirth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD424E87A08007382AA /* NSGenderBirth.swift */; };
-		CC123BD724E88277007382AA /* NSSignUpProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD624E88277007382AA /* NSSignUpProcess.swift */; };
-		CC123BD924E88FBD007382AA /* NSLogInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD824E88FBD007382AA /* NSLogInformation.swift */; };
+		CC123BD524E87A08007382AA /* NSGenderBirthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD424E87A08007382AA /* NSGenderBirthViewController.swift */; };
+		CC123BD724E88277007382AA /* NSSignUpProcessPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD624E88277007382AA /* NSSignUpProcessPageViewController.swift */; };
+		CC123BD924E88FBD007382AA /* NSLogInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD824E88FBD007382AA /* NSLogInformationViewController.swift */; };
 		CC6F612524E9537700F1D6C8 /* NSStepLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612424E9537700F1D6C8 /* NSStepLabel.swift */; };
 		CC6F612724E953A400F1D6C8 /* NSPageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612624E953A400F1D6C8 /* NSPageIndicator.swift */; };
 		CC6F612924E9597400F1D6C8 /* NSPagerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6F612824E9597400F1D6C8 /* NSPagerButton.swift */; };
@@ -49,7 +49,7 @@
 		CC123B9224E80ED2007382AA /* N-SIGNIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "N-SIGNIN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC123B9524E80ED2007382AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC123B9724E80ED2007382AA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC123B9924E80ED2007382AA /* NSLaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLaunchScreen.swift; sourceTree = "<group>"; };
+		CC123B9924E80ED2007382AA /* NSLaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLaunchScreenViewController.swift; sourceTree = "<group>"; };
 		CC123B9E24E80ED4007382AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC123BA124E80ED4007382AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC123BA324E80ED4007382AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,13 +59,13 @@
 		CC123BB324E80ED4007382AA /* N-SIGNINUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "N-SIGNINUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC123BB724E80ED4007382AA /* N_SIGNINUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N_SIGNINUITests.swift; sourceTree = "<group>"; };
 		CC123BB924E80ED4007382AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CC123BC824E82BA5007382AA /* NSPersonalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPersonalData.swift; sourceTree = "<group>"; };
+		CC123BC824E82BA5007382AA /* NSPersonalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPersonalDataViewController.swift; sourceTree = "<group>"; };
 		CC123BCB24E83954007382AA /* NSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
 		CC123BD024E84AF8007382AA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		CC123BD224E875C9007382AA /* NSFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFormField.swift; sourceTree = "<group>"; };
-		CC123BD424E87A08007382AA /* NSGenderBirth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSGenderBirth.swift; sourceTree = "<group>"; };
-		CC123BD624E88277007382AA /* NSSignUpProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSignUpProcess.swift; sourceTree = "<group>"; };
-		CC123BD824E88FBD007382AA /* NSLogInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLogInformation.swift; sourceTree = "<group>"; };
+		CC123BD424E87A08007382AA /* NSGenderBirthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSGenderBirthViewController.swift; sourceTree = "<group>"; };
+		CC123BD624E88277007382AA /* NSSignUpProcessPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSignUpProcessPageViewController.swift; sourceTree = "<group>"; };
+		CC123BD824E88FBD007382AA /* NSLogInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLogInformationViewController.swift; sourceTree = "<group>"; };
 		CC6F612424E9537700F1D6C8 /* NSStepLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStepLabel.swift; sourceTree = "<group>"; };
 		CC6F612624E953A400F1D6C8 /* NSPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPageIndicator.swift; sourceTree = "<group>"; };
 		CC6F612824E9597400F1D6C8 /* NSPagerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPagerButton.swift; sourceTree = "<group>"; };
@@ -171,11 +171,11 @@
 		CC123BC724E810D2007382AA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				CC123BD424E87A08007382AA /* NSGenderBirth.swift */,
-				CC123B9924E80ED2007382AA /* NSLaunchScreen.swift */,
-				CC123BD824E88FBD007382AA /* NSLogInformation.swift */,
-				CC123BC824E82BA5007382AA /* NSPersonalData.swift */,
-				CC123BD624E88277007382AA /* NSSignUpProcess.swift */,
+				CC123BD424E87A08007382AA /* NSGenderBirthViewController.swift */,
+				CC123B9924E80ED2007382AA /* NSLaunchScreenViewController.swift */,
+				CC123BD824E88FBD007382AA /* NSLogInformationViewController.swift */,
+				CC123BC824E82BA5007382AA /* NSPersonalDataViewController.swift */,
+				CC123BD624E88277007382AA /* NSSignUpProcessPageViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -340,20 +340,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC123BD124E84AF8007382AA /* UIViewController+Extension.swift in Sources */,
-				CC123B9A24E80ED2007382AA /* NSLaunchScreen.swift in Sources */,
+				CC123B9A24E80ED2007382AA /* NSLaunchScreenViewController.swift in Sources */,
 				CC6F612B24E97DF500F1D6C8 /* NSTextField+Extension.swift in Sources */,
 				CC123B9624E80ED2007382AA /* AppDelegate.swift in Sources */,
 				CC6F612524E9537700F1D6C8 /* NSStepLabel.swift in Sources */,
-				CC123BD724E88277007382AA /* NSSignUpProcess.swift in Sources */,
+				CC123BD724E88277007382AA /* NSSignUpProcessPageViewController.swift in Sources */,
 				CC6F612E24E98AAB00F1D6C8 /* NSSignUpProcessViewModel.swift in Sources */,
 				CC123BD324E875C9007382AA /* NSFormField.swift in Sources */,
 				CC123B9824E80ED2007382AA /* SceneDelegate.swift in Sources */,
-				CC123BD524E87A08007382AA /* NSGenderBirth.swift in Sources */,
+				CC123BD524E87A08007382AA /* NSGenderBirthViewController.swift in Sources */,
 				CC123BCC24E83954007382AA /* NSTextField.swift in Sources */,
 				CC6F612924E9597400F1D6C8 /* NSPagerButton.swift in Sources */,
-				CC123BD924E88FBD007382AA /* NSLogInformation.swift in Sources */,
+				CC123BD924E88FBD007382AA /* NSLogInformationViewController.swift in Sources */,
 				CC6F612724E953A400F1D6C8 /* NSPageIndicator.swift in Sources */,
-				CC123BC924E82BA5007382AA /* NSPersonalData.swift in Sources */,
+				CC123BC924E82BA5007382AA /* NSPersonalDataViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

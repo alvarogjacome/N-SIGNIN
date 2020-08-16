@@ -1,5 +1,5 @@
 //
-//  NSGenderBirth.swift
+//  NSGenderBirthViewController.swift
 //  N-SIGNIN
 //
 //  Created by Álvaro Gutiérrez Jácome on 15/08/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class NSGenderBirth: UIViewController {
+final class NSGenderBirthViewController: UIViewController {
     private let genderSelector: NSTextField
     private let birthdatePicker: NSTextField
     private let nameField: NSFormField
@@ -81,7 +81,7 @@ final class NSGenderBirth: UIViewController {
     }
 }
 
-extension NSGenderBirth: NSTextFieldPickerDelegate {
+extension NSGenderBirthViewController: NSTextFieldPickerDelegate {
     func numberOfRows() -> Int {
         pickerData.count
     }
@@ -95,7 +95,7 @@ extension NSGenderBirth: NSTextFieldPickerDelegate {
     }
 }
 
-extension NSGenderBirth: NSSignUpProcessDelegate {
+extension NSGenderBirthViewController: NSSignUpProcessDelegate {
     func updateData(model: NSSignUpProcessViewModel) {
         model.updateGenderAndBirth(gender: genderSelector.text!, birth: birthdatePicker.text!)
     }

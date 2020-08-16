@@ -1,5 +1,5 @@
 //
-//  NSPersonalDataViewController.swift
+//  NSGenderBirthViewController.swift
 //  N-SIGNIN
 //
 //  Created by Álvaro Gutiérrez Jácome on 15/08/2020.
@@ -8,21 +8,22 @@
 
 import UIKit
 
-final class NSPersonalDataViewController: UIViewController {
-    private let nameTextField: NSTextField
-    private let surnameTextField: NSTextField
+final class NSGenderBirthViewController: UIViewController {
+    private let genderSelector: NSTextField
+    private let birthdatePicker: NSTextField
     private let nameField: NSFormField
     private let surnameField: NSFormField
+    private let pickerData = ["Male", "Female", "Undefined"]
 
     init() {
-        nameTextField = NSTextField(iconImage: UIImage(named: "Group 7")).nameMode()
-        surnameTextField = NSTextField(iconImage: UIImage(named: "Group 7")).surnameMode()
-        nameField = NSFormField(textfield: nameTextField, titleLabel: "Name")
-        surnameField = NSFormField(textfield: surnameTextField, titleLabel: "Surname")
+        genderSelector = NSTextField(iconImage: UIImage(named: "Vector"), alternateIconImage: UIImage(named: "Vector-1")).pickerMode()
+        birthdatePicker = NSTextField(iconImage: UIImage(named: "Group 1")).dateMode()
+        nameField = NSFormField(textfield: genderSelector, titleLabel: "Gender")
+        surnameField = NSFormField(textfield: birthdatePicker, titleLabel: "Birthdate")
 
         super.init(nibName: nil, bundle: nil)
 
-        title = "Personal data"
+        title = "Personal data: gender & age"
     }
 
     required init?(coder: NSCoder) {
@@ -38,16 +39,18 @@ final class NSPersonalDataViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let parent = parent as? NSSignUpProcess else { return }
+        guard let parent = parent as? NSSignUpProcessPageViewController else { return }
         parent.signUpProcessDelegate = self
     }
 
     private func setupView() {
         view.backgroundColor = UIColor(named: "ColdMorning")
-        nameTextField.tag = 0
-        surnameTextField.tag = 1
-        nameTextField.delegate = parent as? UITextFieldDelegate
-        surnameTextField.delegate = parent as? UITextFieldDelegate
+        genderSelector.tag = 0
+        birthdatePicker.tag = 1
+        genderSelector.delegate = parent as? UITextFieldDelegate
+        birthdatePicker.delegate = parent as? UITextFieldDelegate
+
+        genderSelector.pickerDelegate = self
     }
 
     private func addSubViews() {
@@ -78,8 +81,22 @@ final class NSPersonalDataViewController: UIViewController {
     }
 }
 
-extension NSPersonalDataViewController: NSSignUpProcessDelegate {
+extension NSGenderBirthViewController: NSTextFieldPickerDelegate {
+    func numberOfRows() -> Int {
+        pickerData.count
+    }
+
+    func titleForRow(row: Int) -> String? {
+        pickerData[row]
+    }
+
+    func didSelectRow(row: Int) -> String? {
+        pickerData[row]
+    }
+}
+
+extension NSGenderBirthViewController: NSSignUpProcessDelegate {
     func updateData(model: NSSignUpProcessViewModel) {
-        model.updatePersonalInfo(name: nameTextField.text!, surname: surnameTextField.text!)
+        model.updateGenderAndBirth(gender: genderSelector.text!, birth: birthdatePicker.text!)
     }
 }
