@@ -47,6 +47,7 @@ final class NSCheckInformationViewController: UIViewController {
         self.infoTableView.separatorInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         self.infoTableView.translatesAutoresizingMaskIntoConstraints = false
         self.infoTableView.isScrollEnabled = false
+        self.infoTableView.allowsSelection = false
         self.infoTableView.tableFooterView = UIView()
     }
 
@@ -80,88 +81,4 @@ extension NSCheckInformationViewController: UITableViewDataSource, UITableViewDe
     }
 }
 
-final class NSTableViewCell: UITableViewCell {
-    static let reuseID = "infoCell"
 
-    private let titleLabel = UILabel()
-    private let descriptionLabel = UILabel()
-    private let secureField = UITextField()
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.configure()
-        self.setupSecureField()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func set(content: (String, String, FieldType)) {
-        self.titleLabel.text = content.0
-        self.descriptionLabel.text = content.1
-        self.secureField.text = content.1
-
-        self.configureSecureField(type: content.2)
-    }
-
-    private func setupSecureField() {
-        self.secureField.isSecureTextEntry = true
-        self.secureField.isHidden = true
-        self.secureField.isEnabled = false
-
-        let eyeIcon = UIImageView(image: UIImage(named: "Group 6"))
-        let gesture = UIGestureRecognizer(target: self, action: #selector(self.togglesSecurity))
-        eyeIcon.contentMode = .scaleAspectFit
-        eyeIcon.addGestureRecognizer(gesture)
-
-        self.secureField.rightView = eyeIcon
-        self.secureField.rightViewMode = .always
-    }
-
-    @objc private func togglesSecurity() {
-        self.secureField.isSecureTextEntry.toggle()
-    }
-
-    private func configureSecureField(type: FieldType) {
-        switch type {
-            case .Normal:
-                self.descriptionLabel.isHidden = false
-                self.secureField.isHidden = true
-
-            case .Secure:
-                self.secureField.isHidden = false
-                self.descriptionLabel.isHidden = true
-        }
-    }
-
-    private func configure() {
-        addSubview(self.titleLabel)
-        addSubview(self.descriptionLabel)
-        addSubview(self.secureField)
-
-        self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.secureField.translatesAutoresizingMaskIntoConstraints = false
-
-        accessoryType = .none
-        backgroundColor = .clear
-
-        NSLayoutConstraint.activate([
-            self.titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            self.titleLabel.widthAnchor.constraint(equalToConstant: 100),
-            self.titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            self.titleLabel.heightAnchor.constraint(equalToConstant: 40),
-
-            self.descriptionLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            self.descriptionLabel.leadingAnchor.constraint(equalTo: self.titleLabel.trailingAnchor, constant: 25),
-            self.descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20),
-            self.descriptionLabel.heightAnchor.constraint(equalToConstant: 40),
-
-            self.secureField.centerYAnchor.constraint(equalTo: centerYAnchor),
-            self.secureField.leadingAnchor.constraint(equalTo: self.titleLabel.trailingAnchor, constant: 25),
-            self.secureField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 20),
-            self.secureField.heightAnchor.constraint(equalToConstant: 40),
-        ])
-    }
-}
