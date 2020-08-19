@@ -12,8 +12,6 @@
 		CC123B9A24E80ED2007382AA /* NSLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123B9924E80ED2007382AA /* NSLaunchScreenViewController.swift */; };
 		CC123B9F24E80ED4007382AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC123B9E24E80ED4007382AA /* Assets.xcassets */; };
 		CC123BA224E80ED4007382AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC123BA024E80ED4007382AA /* LaunchScreen.storyboard */; };
-		CC123BAD24E80ED4007382AA /* N_SIGNINTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BAC24E80ED4007382AA /* N_SIGNINTests.swift */; };
-		CC123BB824E80ED4007382AA /* N_SIGNINUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BB724E80ED4007382AA /* N_SIGNINUITests.swift */; };
 		CC123BC924E82BA5007382AA /* NSPersonalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BC824E82BA5007382AA /* NSPersonalDataViewController.swift */; };
 		CC123BCC24E83954007382AA /* NSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BCB24E83954007382AA /* NSTextField.swift */; };
 		CC123BD124E84AF8007382AA /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC123BD024E84AF8007382AA /* UIViewController+Extension.swift */; };
@@ -57,11 +55,7 @@
 		CC123BA124E80ED4007382AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC123BA324E80ED4007382AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC123BA824E80ED4007382AA /* N-SIGNINTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "N-SIGNINTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC123BAC24E80ED4007382AA /* N_SIGNINTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N_SIGNINTests.swift; sourceTree = "<group>"; };
-		CC123BAE24E80ED4007382AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC123BB324E80ED4007382AA /* N-SIGNINUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "N-SIGNINUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC123BB724E80ED4007382AA /* N_SIGNINUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N_SIGNINUITests.swift; sourceTree = "<group>"; };
-		CC123BB924E80ED4007382AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC123BC824E82BA5007382AA /* NSPersonalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPersonalDataViewController.swift; sourceTree = "<group>"; };
 		CC123BCB24E83954007382AA /* NSTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextField.swift; sourceTree = "<group>"; };
 		CC123BD024E84AF8007382AA /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -108,8 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				CC123B9424E80ED2007382AA /* N-SIGNIN */,
-				CC123BAB24E80ED4007382AA /* N-SIGNINTests */,
-				CC123BB624E80ED4007382AA /* N-SIGNINUITests */,
 				CC123B9324E80ED2007382AA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -135,24 +127,6 @@
 				CC6F612C24E98A8D00F1D6C8 /* ViewModel */,
 			);
 			path = "N-SIGNIN";
-			sourceTree = "<group>";
-		};
-		CC123BAB24E80ED4007382AA /* N-SIGNINTests */ = {
-			isa = PBXGroup;
-			children = (
-				CC123BAC24E80ED4007382AA /* N_SIGNINTests.swift */,
-				CC123BAE24E80ED4007382AA /* Info.plist */,
-			);
-			path = "N-SIGNINTests";
-			sourceTree = "<group>";
-		};
-		CC123BB624E80ED4007382AA /* N-SIGNINUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CC123BB724E80ED4007382AA /* N_SIGNINUITests.swift */,
-				CC123BB924E80ED4007382AA /* Info.plist */,
-			);
-			path = "N-SIGNINUITests";
 			sourceTree = "<group>";
 		};
 		CC123BC524E80F80007382AA /* APP */ = {
@@ -373,7 +347,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC123BAD24E80ED4007382AA /* N_SIGNINTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +354,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC123BB824E80ED4007382AA /* N_SIGNINUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,6 +33,8 @@ class NSTextField: UITextField {
         layer.borderWidth = 1
         layer.borderColor = UIColor(named: "Kettleman")?.cgColor
 
+        backgroundColor = .white
+
         textAlignment = .left
         adjustsFontSizeToFitWidth = true
 
