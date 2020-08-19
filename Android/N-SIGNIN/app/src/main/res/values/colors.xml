@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorLight">#1468AEC7</color>
-    <color name="colorPrimary">#00796b</color>
-    <color name="colorPrimaryDark">#00695C</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="DelicateBlue">#1468AEC7</color>
+    <color name="ColdMorning">#E5E5E5</color>
+    <color name="CorfuWaters">#0089AC</color>
+    <color name="DistantHorizon">#F3F9FB</color>
+    <color name="Kettleman">#616161</color>
 </resources>

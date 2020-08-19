@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E5E5E5"
+    android:background="@color/ColdMorning"
     tools:context=".SignUpProcess">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="80dp"
-        android:background="#616161"
+        android:background="@color/Kettleman"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,9 +31,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="115dp"
-        android:layout_marginBottom="45dp"
         android:text="Information"
-        android:textColor="#616161"
+        android:textColor="@color/Kettleman"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/viewPager"
         app:layout_constraintEnd_toEndOf="parent"
