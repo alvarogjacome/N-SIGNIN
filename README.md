@@ -1,4 +1,3 @@
 # N-SIGNIN
 
-![N-SIGNIN](screenshots/iOS.png)
-
+![N-SIGNIN](screenshots/ios.png)
