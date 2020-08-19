@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,6 +26,62 @@
             app:srcCompat="@drawable/logo_horizontal_negativo_trans" />
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:context=".MainActivity">
+
+        <View
+            android:layout_width="180dp"
+            android:layout_height="10dp"
+            android:layout_alignBottom="@+id/stepTwo"
+            android:layout_marginStart="-12dp"
+            android:layout_marginLeft="-12dp"
+            android:layout_marginBottom="15dp"
+            android:layout_toEndOf="@id/stepOne"
+            android:layout_toRightOf="@id/stepOne"
+            android:background="@color/Kettleman" />
+
+        <com.example.n_signin.StepLabel
+            android:id="@+id/stepOne"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            app:pageNumber="1"
+            tools:ignore="RtlCompat" />
+
+        <com.example.n_signin.StepLabel
+            android:id="@+id/stepTwo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/stepOne"
+            android:layout_marginStart="60dp"
+            android:layout_toEndOf="@id/stepOne"
+            android:gravity="center_vertical"
+            app:pageNumber="2"
+            tools:ignore="RtlCompat" />
+
+        <com.example.n_signin.StepLabel
+            android:id="@+id/stepThree"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/stepOne"
+            android:layout_marginStart="60dp"
+            android:layout_toEndOf="@id/stepTwo"
+            android:gravity="center_vertical"
+            app:pageNumber="3"
+            tools:ignore="RtlCompat" />
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/tv_title"
