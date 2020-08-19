@@ -1,6 +1,6 @@
 package com.example.n_signin;
+
 import android.content.Intent;
-import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
@@ -29,12 +29,33 @@ public class MainActivity extends AppCompatActivity {
                 Animation.RELATIVE_TO_SELF, 0.5f,
                 Animation.RELATIVE_TO_SELF, 0.5f
         );
-
         rotate.setDuration(3000);
+
+        rotate.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                try {
+                    Intent k = new Intent(getBaseContext(), SignUpProcess.class);
+                    startActivity(k);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
         image.startAnimation(rotate);
 
-//        Intent pageController = new Intent(this, PageController.class);
-//        startActivity(pageController);
 
     }
+
 }
